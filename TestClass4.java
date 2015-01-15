@@ -3,22 +3,26 @@
     
     import java.util.ArrayList;
 
-/*Solution to hackerEarth of the Problem"Small Factorials"
+/*Solution to hackerEarth of the Problem"Crazy kangaroo"
  * 
- * URL: http://www.hackerearth.com/problem/algorithm/small-factorials/
+ * URL: http://www.hackerearth.com/september-easy-challenge/algorithm/crazy-kangaroo/
  Problem statement:
-You are asked to calculate factorials of some small positive integers.
+Little Jhool is a world renowned kangaroo trainer. He's now living in Australia, and is training kangaroos for his research project on mobile soccer. (We don't know the connection, too.) Anyway, for the project to be completed he observes kangaroos for a lot of time - because he wants to figure out the hop count for various kangaroos he's training.
 
-Input
-An integer T, denoting the number of testcases, followed by T lines, each containing a single integer N.
+Now, he makes a kangaroo stand at the starting point, and lets him jump to the finishing point - given the hop count of that particular kangaroo, figure out the number of jumps he would take between the starting point to the ending point. Both the starting point and the ending points are inclusive.
 
-Output 
-For each integer N given at input, output a single line the value of N!
+Note: He will jump only to those positions which are multiples of M or hop count.
 
-Input Constraint
+Input:
+First line contains number of test cases T. Next T lines contains three integers A, B and M separated by single space. A denoted the starting point, B the finishing point - and M, the hop count - the distance covered by that kangaroo in one jump.
 
-1 <= T <= 100 
-1 <= N <= 100
+Output: 
+For each test case print the number of jumps the kangaroo had to make in the range [A, B] inclusive.
+
+Constraints:
+1<=T<=100000
+1<=A<=B<=1012
+1<=M<=1012
  */
 class TestClass4 {
     public static void main(String[] args) throws Exception {

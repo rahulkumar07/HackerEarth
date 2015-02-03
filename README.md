@@ -1,3 +1,3 @@
 #HackerEarth
 
-This repo includes my soltions to the problems faced in the HackerEarth 
+This repo includes my solutions to the problems faced in the HackerEarth 

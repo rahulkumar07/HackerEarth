@@ -1,4 +1,5 @@
-/* IMPORTANT: class must not be public. */
+/* IMPORTANT: class must not be public.
+URL:http://www.hackerearth.com/tracks/pledge-2015-easy/icpc-team-management/*/
  
  
 import java.io.BufferedReader;

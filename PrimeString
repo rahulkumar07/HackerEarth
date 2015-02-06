@@ -1,0 +1,78 @@
+    import java.io.BufferedReader;
+    import java.io.InputStreamReader;
+    
+    import java.util.ArrayList;
+
+/*Solution to hackerEarth of the Problem"Roy and Profile Picture"
+ * 
+ * URL: http://www.hackerearth.com/problem/algorithm/string-and-primes/
+ Problem statement:Dark completed with studying Strings last night and trying to solve the problem of primes numbers from last three months but did not succeed every time he preferred to ask your help and same goes this time.
+
+He likes to play a game with PRIMES AND STRINGS and he named the game as "PRIME ASCII CHARACTERS".
+
+The rules are as simple as finding the primes.
+
+He wants you to read a string and delete all the characters whose ASCII VALUES is found to be a prime number.
+
+Input:
+
+The first line contains T, the number of test cases. Followed by T lines each contains a single string 'S'.
+
+Output:
+
+For every test case print the string by removing the PRIME ASCII CHARACTERS.
+
+print "NULL" If all the characters of a string are prime ascii characters.
+
+Constraints:
+
+1<=T<=10000
+1<=|S|<=100000
+ */
+class PrimeString {
+	    public static void main(String[] args) throws Exception {
+        /*
+            * Read input from stdin and provide input before running
+           */
+         BufferedReader br =
+            new BufferedReader(new InputStreamReader(System.in));
+        String line = br.readLine();
+        int N = Integer.parseInt(line);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            char str[] = br.readLine().toCharArray();
+            // char newstr[]
+            boolean nullprint=true;
+            for (int k = 0; k < str.length; k++) {
+                if(!checkPrime((long)str[k])){
+                sb.append(str[k]);
+                nullprint=false;
+                }
+            }
+            if(nullprint){
+            	sb.append("NULL\n");
+            }else{
+            sb.append("\n");
+            }
+        }
+
+        System.out.println(sb);
+
+    }
+
+
+    private static boolean checkPrime(long n) {
+        if (n % 2 == 0)
+            return false;
+        for (long i = 3; i <= Math.sqrt(n); ) {
+            if (n % i == 0)
+                return false;
+            else
+                i = i + 2;
+        }
+        return true;
+    }
+ }
+
+
+   

@@ -59,3 +59,44 @@ Test Case #4:
 
 Here's an example of why this particular method is far from ideal. In a situation like this, it appears one character is missing the from the second string, but by our algorithm as described, they score a 0 in similarity.
 */
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+
+class MatchingStrings {
+
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br =
+            new BufferedReader(new InputStreamReader(System.in));
+        String line = br.readLine();
+        int N = Integer.parseInt(line);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            char s[] = br.readLine().toCharArray();
+            char s2[] = br.readLine().toCharArray();
+            int len = 0;
+            if (s2.length > s.length) {
+                for (int j = 0; j < s.length; j++) {
+                    if (s[j] == s2[j]) {
+                        len++;
+                    }
+                }
+            } else {
+                for (int j = 0; j < s2.length; j++) {
+                    if (s[j] == s2[j]) {
+                        len++;
+                    }
+                }
+            }
+           sb.append(len+"\n");
+        }
+      
+        System.out.println(sb);
+    }
+}

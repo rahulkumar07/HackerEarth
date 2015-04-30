@@ -35,3 +35,49 @@ XYXYXYXY => XYXYXYXY, 0 deletions
 YXYXYXYX => YXYXYXYX, 0 deletions
 XXXYYY => XY, 4 deletions
 */
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+ class FlipFlop {
+
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br =
+            new BufferedReader(new InputStreamReader(System.in));
+        String line = br.readLine();
+        int N = Integer.parseInt(line);
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < N; i++) {
+            char s[] = br.readLine().toCharArray();
+            //char s2[] = br.readLine().toCharArray();
+            int len = 0;
+            char frst = s[0];
+            char scnd = 'X';
+            if (frst == 'X') {
+                scnd = 'Y';
+            }
+            char temp = scnd;
+            boolean found = false;
+            for (int j = 1; j < s.length; j++) {
+                if (s[j] != temp) {
+                    len++;
+                } else {
+                    if(temp == frst){
+                        temp=scnd;
+                    }else{
+                        temp=frst;
+                    }
+                }
+            }
+            sb.append(len + "\n");
+        }
+        System.out.println(sb);
+    }
+}
+

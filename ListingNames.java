@@ -29,3 +29,45 @@ Test Case #1:
 
 As the name starts from 'r' comes first then 's' in dictionary and in this case the 'ritesh' name is given 2 times and 'sahil' is given only once so their frequency is coming and remove the duplicate rows.
 */
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+
+public class Class1 {
+
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br =
+            new BufferedReader(new InputStreamReader(System.in));
+        String line = br.readLine();
+        int N = Integer.parseInt(line);
+        StringBuilder sb = new StringBuilder();
+        ArrayList sort = new ArrayList();
+        HashMap<String, Integer> hm = new HashMap<String, Integer>();
+        for (int i = 0; i < N; i++) {
+            String s = br.readLine();
+            if (sort.contains(s)) {
+                hm.put(s, hm.get(s) + 1);
+            } else {
+                hm.put(s, 1);
+            }
+            sort.add(s);
+        }
+        Collections.sort(sort);
+        LinkedHashSet<String> hs = new LinkedHashSet(sort);
+        // String arr[] = (String[])hs.toArray();
+        for (String s : hs) {
+            sb.append(s +" "+hm.get(s)+ "\n");
+        }
+        System.out.println( sb);
+    }
+}
+
